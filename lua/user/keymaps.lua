@@ -26,10 +26,12 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<S-Up>", ":resize -2<CR>", opts)
-keymap("n", "<S-Down>", ":resize +2<CR>", opts)
-keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<S-Left>", "<C-w>>", opts)
+keymap("n", "<S-Right>", "<C-W><", opts)
+keymap("n", "<S-Up>", "<C-w>>", opts)
+keymap("n", "<S-Down>", "<C-W><", opts)
+keymap("n", "<C-S-Left>", "<C-w>+", opts)
+keymap("n", "<C-S-Right>", "<C-w>-", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
@@ -71,4 +73,4 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- telescope
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
-keymap("n", "<leader>g", "<cmd>Telescope grep_files<cr>", opts)
+keymap("n", "<leader>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
