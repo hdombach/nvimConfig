@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+	use "simrat39/rust-tools.nvim"
 
   -- Telescope
 	use {
@@ -84,6 +85,10 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+	use {
+		'kdheepak/tabline.nvim',
+ 		requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
+	}
 
 	use "airblade/vim-gitgutter" -- shows info with git
 
