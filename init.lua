@@ -8,3 +8,4 @@ require "user.treesitter"
 require("user.lualine")
 require "user.terminal"
 require "user.keymaps"
+require "user.bclose"

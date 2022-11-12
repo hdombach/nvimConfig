@@ -21,7 +21,7 @@ end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+		theme = 'auto',
     component_separators = '|',
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
@@ -36,7 +36,7 @@ lualine.setup {
     lualine_x = {'encoding'},
 		lualine_y = {'progress'},
     lualine_z = {
-			{'location', separator = { right = ''}, left_padding = 2 }
+			{'location', separator = { right = ''}, left_padding = 2 }
 		}
   },
   inactive_sections = {
