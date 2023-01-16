@@ -62,8 +62,9 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer
+	use "williamboman/mason-lspconfig.nvim"
+  use "neovim/nvim-lspconfig" -- enable LSP
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
 	use "simrat39/rust-tools.nvim"
 
