@@ -74,11 +74,11 @@ return packer.startup(function(use)
 	}
 
   -- Treesitter
-  --use {
-  --  "nvim-treesitter/nvim-treesitter",
-  --  run = ":TSUpdate",
-  --}
-  --use "nvim-treesitter/playground"
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "nvim-treesitter/playground"
 
   -- status line
   use {

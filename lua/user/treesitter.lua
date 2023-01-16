@@ -1,5 +1,10 @@
-local configs = require("nvim-treesitter.configs")
-configs.setup {
+local status_ok, tree_sitter = pcall(require, "nvim-treesitter.configs")
+if not status_ok then 
+	vim.notify("could not get tree sitter")
+	return
+end
+
+tree_sitter.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "cpp" },
 
