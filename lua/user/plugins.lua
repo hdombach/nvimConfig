@@ -63,7 +63,7 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/mason.nvim" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
 	use "simrat39/rust-tools.nvim"
 
@@ -74,11 +74,11 @@ return packer.startup(function(use)
 	}
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use "nvim-treesitter/playground"
+  --use {
+  --  "nvim-treesitter/nvim-treesitter",
+  --  run = ":TSUpdate",
+  --}
+  --use "nvim-treesitter/playground"
 
   -- status line
   use {
@@ -91,6 +91,8 @@ return packer.startup(function(use)
 	}
 
 	use "airblade/vim-gitgutter" -- shows info with git
+
+	use "j-hui/fidget.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
