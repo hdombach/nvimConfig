@@ -68,7 +68,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-i>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>c", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
@@ -90,6 +90,7 @@ local on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
+	print("attaching things for server", client.name)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 end
@@ -103,12 +104,41 @@ end
 
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
-require("lspconfig")["clangd"].setup {
-	on_attach = on_attach,
-	capabilities = capabilities
+local status_ok, mason = pcall(require, "mason")
+if not status_ok then
+	vim.notify("Could not load mason")
+	return
+end
+
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok then
+	vim.notify("could not load mason_lspconfig")
+	return
+end
+
+mason.setup()
+mason_lspconfig.setup()
+
+mason_lspconfig.setup_handlers {
+		-- The first entry (without a key) will be the default handler
+		-- and will be called for each installed server that doesn't have
+		-- a dedicated handler.
+		function (server_name) -- default handler (optional)
+				require("lspconfig")[server_name].setup {
+					on_attach = on_attach,
+					capabilities = capabilities
+				}
+		end,
+		-- Next, you can provide a dedicated handler for specific servers.
+		-- For example, a handler override for the `rust_analyzer`:
+		["rust_analyzer"] = function ()
+				require("rust-tools").setup {
+					server = {
+						on_attach = on_attach,
+						capabilities = capabilities
+					}
+				}
+		end
 }
-require("lspconfig")["sumneko_lua"].setup {
-	on_attach = on_attach,
-	capabilities = capabilities
-}
+
 setup()

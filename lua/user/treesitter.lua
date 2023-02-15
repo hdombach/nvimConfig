@@ -1,5 +1,5 @@
 local status_ok, tree_sitter = pcall(require, "nvim-treesitter.configs")
-if not status_ok then 
+if not status_ok then
 	vim.notify("could not get tree sitter")
 	return
 end
@@ -16,7 +16,8 @@ tree_sitter.setup {
 
   highlight = {
     -- `false` will disable the whole extension
-    enable = false,
+    enable = true,
+		disable = { "lua" },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).

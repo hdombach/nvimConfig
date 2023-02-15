@@ -73,3 +73,5 @@ keymap("t", "<ESC>", "<C-\\><C-N>", term_opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+
+keymap("n", "<leader>c", ":BufferClose<cr>", opts)

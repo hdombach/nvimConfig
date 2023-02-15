@@ -48,6 +48,7 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "morhetz/gruvbox"
+	use "arcticicestudio/nord-vim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -82,18 +83,24 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
 
   -- status line
+	use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 	use {
-		'kdheepak/tabline.nvim',
- 		requires = { { 'hoob3rt/lualine.nvim', opt=true }, {'kyazdani42/nvim-web-devicons', opt = true} }
+		'romgrk/barbar.nvim',
+ 		requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
 
 	use "airblade/vim-gitgutter" -- shows info with git
 
 	use "j-hui/fidget.nvim"
+
+	use({
+    "aserowy/tmux.nvim",
+    config = function() return require("tmux").setup() end
+	})
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

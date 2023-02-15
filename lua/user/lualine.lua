@@ -1,15 +1,11 @@
-local status_ok, tabline = pcall(require, "tabline")
+local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then 
-	vim.notify("could not get tablline")
+	vim.notify("could not get bufferline")
 	return 
 end
 
-tabline.setup {
-	enable = true,
-	options = {
-    section_separators = {'', ''},
-		component_separators = {'|', '|'},
-	},
+bufferline.setup {
+	animation = false,
 }
 
 local status_ok, lualine = pcall(require, "lualine")
@@ -47,17 +43,5 @@ lualine.setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {
-			{require'tabline'.tabline_buffers, separator = { left = '', right = '' }, right_padding = 2 }
-		},
-    lualine_x = {
-			{ require'tabline'.tabline_tabs, separator = { left = '', right = '' }, left_padding = 2 }
-		},
-    lualine_y = {},
-    lualine_z = {},
-	},
   extensions = {}
 }
