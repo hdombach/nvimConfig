@@ -209,6 +209,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/hezekiahdombach/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  vim_current_word = {
+    loaded = true,
+    path = "/Users/hezekiahdombach/.local/share/nvim/site/pack/packer/start/vim_current_word",
+    url = "https://github.com/dominikduda/vim_current_word"
   }
 }
 

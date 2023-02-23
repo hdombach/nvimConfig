@@ -97,6 +97,8 @@ return packer.startup(function(use)
 
 	use "j-hui/fidget.nvim"
 
+	use "dominikduda/vim_current_word"
+
 	use({
     "aserowy/tmux.nvim",
     config = function() return require("tmux").setup() end

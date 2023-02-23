@@ -34,8 +34,8 @@ keymap("n", "<S-Down>", ":resize +1<CR>", opts)
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":BufferNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferPrevious<CR>", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -75,3 +75,4 @@ keymap("n", "<leader>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>"
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 keymap("n", "<leader>c", ":BufferClose<cr>", opts)
+keymap("n", "<leader>/", ":noh<cr>", opts)

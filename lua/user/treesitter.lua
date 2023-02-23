@@ -16,7 +16,7 @@ tree_sitter.setup {
 
   highlight = {
     -- `false` will disable the whole extension
-    enable = true,
+    enable = false,
 		disable = { "lua" },
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
