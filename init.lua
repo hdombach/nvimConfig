@@ -10,3 +10,4 @@ require("user.lualine")
 require "user.keymaps"
 --require "user.bclose"
 require "user.fidget"
+require "user.commands"

@@ -33,6 +33,7 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  list = true,
 }
 
 vim.opt.shortmess:append "c"
@@ -40,6 +41,8 @@ vim.opt.shortmess:append "c"
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.opt.listchars["space"] = "#"
 
 vim.cmd "set colorcolumn=80"
 vim.cmd "set whichwrap+=<,>,[,],h,l"

@@ -47,6 +47,7 @@ keymap("n", "<leader>v", ":lua vim.lsp.buf.code_action({apply = true})<CR>", opt
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

@@ -205,6 +205,11 @@ _G.packer_plugins = {
     path = "/Users/hezekiahdombach/.local/share/nvim/site/pack/packer/start/tmux.nvim",
     url = "https://github.com/aserowy/tmux.nvim"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/hezekiahdombach/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-gitgutter"] = {
     loaded = true,
     path = "/Users/hezekiahdombach/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
