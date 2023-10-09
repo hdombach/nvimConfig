@@ -21,3 +21,5 @@ endtry
 vim.api.nvim_set_hl(0, "CurrentWord", {bold=true, underline=true, link="Label"})
 vim.api.nvim_set_hl(0, "CurrentWordTwins", {bold=true, link="Label"})
 vim.api.nvim_set_hl(0, "Comment", {bold=true, ctermfg=243, fg="#7c6f64"})
+vim.api.nvim_set_hl(0, "Identifier", {link="cleared"})
+vim.api.nvim_set_hl(0, "Function", {link="cleared"})
