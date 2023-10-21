@@ -105,6 +105,8 @@ return packer.startup(function(use)
     config = function() return require("tmux").setup() end
 	})
 
+	use "xiyaowong/transparent.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

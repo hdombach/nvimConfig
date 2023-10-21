@@ -200,6 +200,11 @@ _G.packer_plugins = {
     path = "/Users/hezekiah/.local/share/nvim/site/pack/packer/start/tmux.nvim",
     url = "https://github.com/aserowy/tmux.nvim"
   },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/Users/hezekiah/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/hezekiah/.local/share/nvim/site/pack/packer/start/vim-fugitive",
