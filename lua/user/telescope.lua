@@ -89,6 +89,7 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+    'emoji'
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

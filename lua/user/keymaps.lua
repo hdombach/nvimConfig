@@ -31,7 +31,7 @@ keymap("n", "<S-Right>", "<C-W><", opts)
 keymap("n", "<S-Up>", ":resize -1<CR>", opts)
 keymap("n", "<S-Down>", ":resize +1<CR>", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>l", ":Lex 30<cr>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":BufferNext<CR>", opts)
@@ -74,6 +74,7 @@ keymap("t", "<ESC>", "<C-\\><C-N>", term_opts)
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<leader>g", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>e", "<cmd>Telescope emoji<cr>", opts)
 
 keymap("n", "<leader>c", ":BufferClose<cr>", opts)
 keymap("n", "<leader>/", ":noh<cr>", opts)
