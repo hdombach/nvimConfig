@@ -141,4 +141,16 @@ mason_lspconfig.setup_handlers {
 		end
 }
 
+require('lspconfig')['hls'].setup {
+	cmd = { "haskell-language-server-wrapper", "--lsp" },
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
+require('lspconfig')['clangd'].setup {
+	cmd = { "/Library/Developer/CommandLineTools/usr/bin/clangd" },
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
 setup()

@@ -43,6 +43,9 @@ for k, v in pairs(options) do
 end
 
 vim.opt.listchars["space"] = "#"
+vim.opt.fo = vim.opt.fo + "/"
+vim.opt.cinkeys = "0{,0},0),0],:,0#,!^F,o,O,e"
+vim.opt.cinoptions = "(s,m1,W1"
 
 vim.cmd "set colorcolumn=80"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
