@@ -153,4 +153,11 @@ require('lspconfig')['clangd'].setup {
 	capabilities = capabilities
 }
 
+require("rust-tools").setup {
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities
+	}
+}
+
 setup()
