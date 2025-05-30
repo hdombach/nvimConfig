@@ -97,7 +97,7 @@ return packer.startup(function(use)
 	use "airblade/vim-gitgutter" -- shows info with git
 	use "tpope/vim-fugitive"
 
-	-- use "j-hui/fidget.nvim"
+	use "j-hui/fidget.nvim"
 
 	use "dominikduda/vim_current_word"
 

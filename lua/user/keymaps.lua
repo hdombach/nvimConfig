@@ -78,3 +78,24 @@ keymap("n", "<leader>e", "<cmd>Telescope emoji<cr>", opts)
 
 keymap("n", "<leader>c", ":BufferClose<cr>", opts)
 keymap("n", "<leader>/", ":noh<cr>", opts)
+
+-- lsp
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "<leader>k", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "<C-i>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "<leader>a", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+keymap(
+  "n",
+  "<leader>l",
+  '<cmd>lua vim.diagnostic.open_float(0, {scope="line"})<CR>',
+  opts
+)
+keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+

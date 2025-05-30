@@ -5,7 +5,9 @@ if not status_ok then
 end
 
 fidget.setup {
-	window = {
-		border = "rounded"
+	notification = {
+		window = {
+			border = "rounded"
+		}
 	}
 }
